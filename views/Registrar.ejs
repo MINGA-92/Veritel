@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> :: Registrar :: </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body class="bg-dark">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-black static-top shadow" style="margin-top: 7px;">
+        <div class="container bg-black">
+            <a class="navbar-brand text-white" href="#"><h2 class="text-info"> <img src="/LogoVerytel.png" class="logo" width="28%"/> </h2></a>
+            <h4 class="btn-outline-info text-dark"></h4>
+            <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-white" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-info" href="./">👨🏽‍💼 Lista Abonados </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-info" href="/Registrar">📋 Registrar Nuevo </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href=""> ☠ Cerrar Sesion </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario -->
+    <section class="pricing py-7">
+        <div class="container col-md-8 col-lg-7 col-xl-10" style="margin-top: 2%;"> 
+            <div class="card-header bg-info text-center text-uppercase"><b>Registro Nuevo Abonado</b></div>       
+            <div class="card-body bg-light">
+                <form class="col-md-12 mb-12" action="/GuardarAbonados" method="POST" style="margin-top: 5%; margin-left: 5%;">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="form-label">Tipo De Documento: </label>
+                            <div class="form-group">
+                                <select class="form-select" id="SelectTipoDocumento" name="SelectTipoDocumento">
+                                    <option disabled selected>Elige Una Opción</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label" for="InputDocumento">Numero De Documento: </label>
+                            <input type="number" class="form-control" id="InputDocumento" name="InputDocumento" placeholder="Numero De Identificación"/>
+                        </div>
+                        <div class="col-md-5">
+                            <label class="form-label" for="InputNombreCompleto">Nombres y Apellidos Completos: </label>
+                            <input type="text" class="form-control" id="InputNombreCompleto" name="InputNombreCompleto" placeholder="Ingresa Tus Nombres y Apellidos"/>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 2%;">
+                        <div class="col-md-2">
+                            <label class="form-label" for="InputFecha">Fecha De Nacimiento: </label>
+                            <input type="date" class="form-control" id="InputFecha" name="InputFecha"/>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">Genero: </label>
+                            <div class="form-group">
+                                <select class="form-select" id="SelectGenero" name="SelectGenero">
+                                    <option disabled selected>Elige Una Opcion</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label" for="InputTelefono">Numero De Teléfono: </label>
+                            <input type="number" class="form-control" id="InputTelefono" name="InputTelefono" placeholder="Numero De Teléfono Movil"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="InputEmail">Correo Electrónico: </label>
+                            <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Ingresa Una Dirección De Email Válida"/>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 2%;">
+                        <div class="col-md-4">
+                            <label class="form-label">Dirección Exacta: </label>
+                            <input type="text" class="form-control" id="InputDireccion" name="InputDireccion" placeholder="Ingresa Tu Dirección Exacta"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Barrio: </label>
+                            <input type="text" class="form-control" id="InputBarrio" name="InputBarrio" placeholder="Nombre Del Barrio"/>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Frente De Seguridad a Asociar: </label>
+                            <div class="form-group">
+                                <select class="form-select" id="SelectFrenteSeguridad" name="SelectFrenteSeguridad">
+                                    <option disabled selected>Elige Una Opcion</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 2%;">
+                        <div class="col-md-3">
+                            <label class="form-label">¿Tienes Antecedentes?: </label>
+                            <div class="form-group">
+                                <select class="form-select" id="SelectAntecedentes" name="SelectAntecedentes">
+                                    <option disabled selected>Elige Una Opcion</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <label class="form-label" for="LoadImg">Foto De Perfil o Documento De Identidad Escaneado: </label>
+                            <input type="file" class="form-control" id="LoadImg" name="LoadImg"/>
+                            <input type="text" class="form-control" id="LoadImgText" name="LoadImgText" hidden/>
+                        </div>
+                    </div>
+                    <button type="submit" id="BtnGuardarTodo" class="btn" hidden>Guardar Todo</button>
+                </form>
+
+                <div class="row" style="margin-top: 2%;">
+                    <div class="modal-footer">
+                        <button type="button" id="BtnGuardarAbonado" class="btn btn-info text-white">💾 Guardar </button>
+                        <a href="./" class="btn btn-secondary">❌ Cancelar </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Copyright -->
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top: 11%;">  
+        <iframe id="FrameFooter" src="./Footer" height="68" width="100%"> </iframe>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.4/sweetalert2.all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/FuncionesGenerales.js"></script>
+    <script src="/ListasDesplegables.js"></script>
+
+</body>
+</html>
